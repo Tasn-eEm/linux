@@ -1,0 +1,24 @@
+git config --global user.name "Tsnem"
+git config --global user.email "tasneem.bahaa33@gmail.com"
+git clone https://github.com/Tasn-eEm/linux
+cd linux
+mkdir task-2
+cd task-2
+touch greeting.txt
+echo hello world >> greeting.txt
+git add .
+git commit -m "Adding greeting"
+cd
+cd linux
+git branch intro
+git checkout intro
+cd task-2
+echo i love git >> greeting .txt
+git add .
+git commit -m "Added I love Git"
+git checkout main
+git merge intro
+git tag v1
+git push origin main
+git push origin intro
+git push origin v1
