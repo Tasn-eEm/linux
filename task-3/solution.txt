@@ -1,0 +1,50 @@
+mkdir project_files
+cd project_files
+mkdir reports logs data
+cd reports
+touch report1.md report2.md
+cd
+cd project_files/logs
+touch system.log error.log file1.pdf file2.pdf
+cd
+cd project_files/data/
+touch data.csv info.txt
+cd project_files/reports/
+nano report1.md 
+cd
+cd project_files/logs/
+nano system.log 
+cd
+cd project_files/data/
+nano data.csv 
+cd ~/project_files/logs
+tar --exclude='logs_backup.tar' -cvf logs_backup.tar .
+mv logs_backup.tar  ~/project_files/
+cd project_files
+tar -xvf logs_backup.tar -C ~/project_files/logs/
+find ~ -type f -name "*.md"
+find ~/project_files/ -name "*.log"
+find ~/project_files/ -name file1.pdf
+find ~/project_files/ -iname "*.pdf"
+find ~/project_files/logs/ -type f
+cd
+cd project_files
+ln -s ~/project_files/data/data.csv ~/project_files/link_data.csv
+cd 
+cd project_files/data/
+nano link_data.csv 
+cat ~/project_files/data/data.csv
+rm link_data.csv 
+touch summary.txt
+echo "Summary Start" > summary.txt 
+date >> summary.txt 
+wc -l <summary.txt | tee -a summary.txt
+cd reports
+ls report1.md | wc -w
+cd
+cd project_files
+wc -c <  ~/project_files/logs/system.log  | tee -a summary.txt 
+cd project_files
+find ~/project_files | wc -l | tee -a ~/project_files/summary.txt
+cat summary.txt
+find ~/project_files | wc -l | tee -a ~/project_files/summary.txt
