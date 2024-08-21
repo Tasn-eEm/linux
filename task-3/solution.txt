@@ -47,4 +47,3 @@ wc -c <  ~/project_files/logs/system.log  | tee -a summary.txt
 cd project_files
 find ~/project_files | wc -l | tee -a ~/project_files/summary.txt
 cat summary.txt
-find ~/project_files | wc -l | tee -a ~/project_files/summary.txt
